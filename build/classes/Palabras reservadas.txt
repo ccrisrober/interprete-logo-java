@@ -1,0 +1,1 @@
+﻿casa, CASA, giro, GIRO, avanza, AVANZA, pinta, PINTA, color, COLOR, rojo, ROJO, verde, VERDE, negro, NEGRO, naranja, NARANJA, rosa, ROSA, blanco, BLANCO, amarillo, AMARILLO, magenta, MAGENTA, si, SI, entonces, ENTONCES, ir_a, IR_A, and, AND, or, OR, not, NOT

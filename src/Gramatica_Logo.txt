@@ -1,0 +1,86 @@
+﻿G = (VN, VT, P ,S)
+VN = {PASEO, PASO, E, E_PRIMA, F, F_PRIMA, T, COLOR, CONDICIONAL, COND_PAR, AND_OR, NOT, COMP, MAS_MENOS}
+VT = {casa, giro, avanza, pinta, id, =, si, entonces, ir_a, +, -, *, /, n, (, ), >, <, <>, ==, >=, <=, and, or, negro, verde, naranja, rosa, rojo, blanco, amarillo, magenta}
+P = {
+
+// PASEO
+
+PASEO -> PASO PASEO
+PASEO -> λ
+
+// PASO
+
+PASO -> casa
+PASO -> giro E
+PASO -> pinta E
+PASO -> id = E
+PASO -> color = COLOR
+PASO -> si CONDICIONAL entonces PASO
+PASO -> ir_a E
+
+// CONDICIONAL
+
+CONDICIONAL -> NOT COND_PAR
+CONDICIONAL -> NOT COMP
+
+// COND_PAR
+
+COND_PAR -> ( CONDICIONAL ) AND_OR
+COND_PAR -> λ
+
+// AND_OR
+
+AND_OR ->  λ
+AND_OR -> and CONDICIONAL
+AND_OR -> or CONDICIONAL
+
+// NOT
+
+NOT -> not NOT
+NOT -> λ
+
+// COMP
+
+COMP -> E > E
+COMP -> E < E
+COMP -> E <> E
+COMP -> E == E
+COMP -> E >= E
+COMP -> E <= E
+
+// COLOR
+
+COLOR -> negro
+COLOR -> verde
+COLOR -> naranja
+COLOR -> rosa
+COLOR -> rojo
+COLOR -> blanco
+COLOR -> amarillo
+COLOR -> magenta
+
+// E
+
+E -> T E_PRIMA
+
+// E_PRIMA
+
+E_PRIMA -> + T E_PRIMA
+E_PRIMA -> - T E_PRIMA
+
+// T
+
+T -> F T_PRIMA
+
+// T_PRIMA
+
+T_PRIMA -> F * T_PRIMA
+T_PRIMA -> F / T_PRIMA
+
+// F
+
+F -> ( E )
+F -> id
+F -> n
+}
+S = PASEO
